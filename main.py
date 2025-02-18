@@ -1,6 +1,6 @@
-for i in range(10):
-    if i == 3:
-        continue   # 跳过当前迭代
-    if i == 7:
-        break      # 终止循环
-    print(i)
+def add(a, b):
+    """返回a + b的结果"""
+    return a + b
+
+result = add(3, 5)  # 输出8
+print(result)
