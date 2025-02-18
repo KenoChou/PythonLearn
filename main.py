@@ -1,7 +1,6 @@
-age = 18
-if age < 18:
-    print("未成年")
-elif age == 18:
-    print("刚成年")
-else:
-    print("成年人")
+for i in range(5):     # 输出0-4
+    print(i)
+
+fruits = ["苹果", "香蕉", "橘子"]
+for fruit in fruits:   # 遍历列表
+    print(fruit)
