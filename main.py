@@ -1,21 +1,10 @@
-class LoggingDecorator:
-    def __init__(self, func):
-        self.func = func
+def count_up_to(max):
+    count = 1
+    while count <= max:
+        yield count  # 每次调用next()时返回当前count并暂停
+        count += 1
 
-    def __call__(self, *args, **kwargs):
-        print(f"调用函数: {self.func.__name__}")
-        return self.func(*args, **kwargs)
-
-@LoggingDecorator
-def say_hello():
-    print("Hello!")
-
-say_hello()  # 输出: 调用函数: say_hello → Hello!
-@LoggingDecorator
-def factorial(n):
-    if n == 0:
-        return 1
-    else:
-        return n * factorial(n-1)
-
-print(f"5! = {factorial(5)}")  # 输出: 调用函数: factorial → 5! = 1
+counter = count_up_to(3)
+print(next(counter))  # 1
+print(next(counter))  # 2
+print(next(counter))  # 3
