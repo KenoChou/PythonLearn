@@ -1,8 +1,8 @@
-a = 10          # 整数
-name = "Alice"  # 字符串
-is_valid = True # 布尔值
-print(a)
-print(name)
-print(is_valid)
-print(type(a))
-print(type(name))
+num_str = "123"
+print(num_str)  # 输出：123
+print(type(num_str))  
+# 输出：<class 'str'>  
+num = int(num_str)  # 字符串 → 整数
+print(num)  # 输出：123
+print(type(num))  # 输出：<class 'int'>
+# 输出：<class 'int'>
