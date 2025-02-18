@@ -1,10 +1,4 @@
-def count_up_to(max):
-    count = 1
-    while count <= max:
-        yield count  # 每次调用next()时返回当前count并暂停
-        count += 1
-
-counter = count_up_to(3)
-print(next(counter))  # 1
-print(next(counter))  # 2
-print(next(counter))  # 3
+# 类似列表推导式，但返回生成器对象
+squares = (x**2 for x in range(10))
+print(next(squares))  # 0
+print(next(squares))  # 1
