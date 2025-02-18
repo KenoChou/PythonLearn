@@ -1,12 +1,18 @@
-from contextlib import contextmanager
+class AsyncConnection:
+    async def __aenter__(self):
+        print("连接建立")
+        return self
 
-@contextmanager
-def file_manager(filename, mode):
-    try:
-        f = open(filename, mode)
-        yield f  # yield 前的代码相当于 __enter__，之后相当于 __exit__
-    finally:
-        f.close()
+    async def __aexit__(self, exc_type, exc_val, exc_tb):
+        print("连接关闭")
 
-with file_manager("file.txt", "r") as f:
-    print(f.read())
+async def main():
+    async with AsyncConnection() as conn:
+        print("使用连接中...")
+
+import asyncio
+asyncio.run(main())
+# 输出:
+# 连接建立
+# 使用连接中...
+# 连接关闭
