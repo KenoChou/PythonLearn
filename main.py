@@ -1,3 +1,2 @@
-with open("file.txt", "r") as f:
-    content = f.read()
-    print(content)
+multiply = lambda a, b: a * b
+print(multiply(3, 4))  # 12
