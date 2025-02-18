@@ -1,6 +1,3 @@
-def add(a, b):
-    """返回a + b的结果"""
-    return a + b
-
-result = add(3, 5)  # 输出8
-print(result)
+def greet(name="匿名"):
+    print(f"Hello, {name}!")
+greet()  # 输出：Hello, 匿名!
