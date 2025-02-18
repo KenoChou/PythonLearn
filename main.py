@@ -1,18 +1,12 @@
-class AsyncConnection:
-    async def __aenter__(self):
-        print("连接建立")
-        return self
+def add_method(cls):
+    def new_method(self):
+        print("动态添加的方法")
+    cls.new_method = new_method
+    return cls
 
-    async def __aexit__(self, exc_type, exc_val, exc_tb):
-        print("连接关闭")
+@add_method
+class MyClass:
+    pass
 
-async def main():
-    async with AsyncConnection() as conn:
-        print("使用连接中...")
-
-import asyncio
-asyncio.run(main())
-# 输出:
-# 连接建立
-# 使用连接中...
-# 连接关闭
+obj = MyClass()
+obj.new_method()  # 输出: 动态添加的方法
